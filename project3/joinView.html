@@ -1,0 +1,173 @@
+  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/style.css">
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+var id="abcd";
+
+$(document).ready(function(){
+	$("#uid").keyup(function(){
+		var uid=$('#uid').val();
+
+		if(id==uid)
+			$('#ckid').text("사용할수 없는 아이디 입니다").css('color','red');
+		else
+			$('#ckid').text("사용할수 있는 아이디 입니다").css('color','green');
+	});
+	
+	$('#pwd2').keyup(function(){
+		var pass1=$('#pwd1').val();
+		var pass2=$('#pwd2').val();
+
+		if(pass1==pass2)
+			$('#ckpwd').html("비밀번호가 일치합니다").css('color',"green");
+		else
+			$('#ckpwd').html("비밀번호가 일치하지 않습니다").css('color','red');
+	});
+});
+</script>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> <img src="image/home.gif"> 하이!!!신정민 </a>
+            </div>
+            <ul class="sidemenu">
+                <li><a href="index.html">Home</a></li>
+               <li><a href="searchmap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+    
+<!-- nav --------------------------------------------- -->
+	<nav>
+		<div class="container">
+			<ul class="leftMenu">
+				<li class="dropBox">
+					메인갤러리 
+					<span class="dropmenu"> 
+						<span><a href="index.html">index</a></span> 
+						<span><a href="gallery.html">갤러리</a></span>
+					</span>
+				</li>
+
+				<li class="dropBox">
+					게시판
+					<span class="dropmenu"> 
+						<span><a href="board.html">자유 게시판</a></span> 
+						<span><a href="#">문의 게시판</a></span> 
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="">멀티미디어</a> 
+					<span class="dropmenu"> 
+						<span><a href="#">음악듣기</a></span> 
+						<span><a href="video.html">동영상보기</a></span> 
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="">상품정보</a>
+					<span class="dropmenu">
+                        <span> <a href="mycoffee.html">mycoffee</a> </span>
+						<span> <a href="#">myproduct</a> </span>
+					</span>
+				</li>
+
+				<li class="dropBox">
+					<a href="">mypage</a>
+					<span class="dropmenu">
+						<span> <a href="searchmap.html">위치지도</a> </span>
+						<span> <a href="#">About</a> </span>
+					</span>
+				</li>
+			</ul>
+			<ul class="rightMenu">
+				<li><a href="join.html">회원가입</a></li>
+				<li><a href="login.html">로그인</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- //nav -->
+	
+	<!-- section4 --------------------------------------------- -->
+	<section id="section4">
+        <div class="container">
+            <div class="joinBox">
+                <div class="logo">
+                    <h1>회원가입</h1>
+                </div>
+            <form action="/join" method="post">
+                <div class="boxWrap">
+                    <div class="input-group">
+                        <div class="title">이름</div>
+                        <div><input type="text" placeholder="이름을 입력하세요">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="title">아이디</div>
+                        <div>
+                        	<input type="text" id="uid" placeholder="아이디를 입력하세요">
+                        	<div id="ckid"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="title">비밀번호</div>
+                        <div>
+                        	<input type="password" id="pwd1" placeholder="비밀번호를 입력하세요">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="title">비밀번호 확인</div>
+                        <div>
+                        	<input type="password" id="pwd2" placeholder="비밀번호 확인을 입력하세요">
+                         	<div id="ckpwd"></div>
+                         </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="title">휴대폰</div>
+                        <div><input type="tel" placeholder="ex) 010-1234-5678"></div>
+                    </div>
+                    <div class="input-group">
+                        <div class="title">이메일</div>
+                        <div><input type="email" placeholder="example@example.com"></div>
+                    </div>
+                    <div class="btn_box">
+                        <button type="submit" class="btn">가입완료</button>
+                        <a href="joinView.html" class="btn">취소</a>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <!-- //section4 -->
+    
+    <!-- footer -->
+    <footer>    
+        <div class="top">
+            <div class="container">
+                <span>다운로드</span>
+                <span>개인정보처리방침</span>
+                <span>저작권지침및신고</span>
+                <span>이메일무단수집거부</span>
+            </div>
+        </div>
+        <div class="container">
+            <strong>
+                Home : Location Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+                (주)K-COM 서울 00구  K-COM 301호
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    </body>
+</html>

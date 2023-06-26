@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/style.css">
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+var emp = { 
+		"id" : "abcd",
+		"pw" : "1234",
+		"name" : "홍길동",
+		"point" : "1250"
+};
+$(document).ready(function(){
+	$("#loginb").click(function(){
+	     var sid = $("#uid").val();
+	     var spw = $("#pwd").val();
+	     
+	     if(sid=="" || spw=="")
+	     {
+			$("#result").text("아이디와 비밀번호를 입력해 주세요").css("color","black");			    	 
+	     }else{
+			if(emp.id==sid && emp.pw==spw){
+				alert(emp.name+"님 로그인 하셨습니다.\n현재 보유하신 포인터는 "+emp.point+"점 입니다");
+				$("#loginok").submit();
+			}else{
+				alert("아이디 또는 비밀번호가 틀립니다.");
+				$("#uid").val("");
+				$("#pwd").val("");
+				$("#uid").focus();
+			} 
+	     }		
+	});	
+	
+	$("#searId").click(function(){
+		$("#back").css("display", "block");
+	    $("#popup").css("display", "block");
+	});
+	
+	$(".close").click(function(){
+		$("#back").css("display", "none");
+	    $("#popup").css("display", "none");
+	});
+});
+</script>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+			<div class="logo">
+                <a href="index.html"> <img src="image/home.gif">하이!!!신정민 </a>
+            </div>
+            <ul class="sidemenu">
+				<li><a href="index.html">Home</a></li>
+               <li><a href="searchmap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+    
+<!-- nav --------------------------------------------- -->
+	<nav>
+		<div class="container">
+			<ul class="leftMenu">
+				<li class="dropBox">
+					메인갤러리 
+					<span class="dropmenu"> 
+						<span><a href="index.html">index</a></span> 
+						<span><a href="gallery.html">갤러리</a></span>
+					</span>
+				</li>
+
+				<li class="dropBox">
+					게시판 
+					<span class="dropmenu"> 
+						<span><a href="board.html">자유 게시판</a></span> 
+						<span><a href="#">문의 게시판</a></span> 
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="">멀티미디어</a> 
+					<span class="dropmenu"> 
+						<span><a href="#">음악듣기</a></span> 
+						<span><a href="video.html">동영상보기</a></span> 
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="">상품정보</a>
+					<span class="dropmenu">
+						<span> <a href="mycoffee.html">mycoffee</a> </span>
+						<span> <a href="#">myproduct</a> </span>
+					</span>
+				</li>
+
+				<li class="dropBox">
+					<a href="">mypage</a>
+					<span class="dropmenu">
+						<span> <a href="searchmap.html">위치지도</a> </span>
+						<span> <a href="#">About</a> </span>
+					</span>
+				</li>
+			</ul>
+			<ul class="rightMenu">
+				<li><a href="join.html">회원가입</a></li>
+				<li><a href="login.html">로그인</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- //nav -->
+	
+	<!-- section2 --------------------------------------------- -->
+    <section id="section2">
+        <div class="container">
+            <div class="loginBox">
+                <div>
+                    <div class="box">
+                        <div class="logo">
+                            <h1>로그인</h1>
+                        </div>
+                        <form action="index.html" method="get" id="loginok">
+                            <input type="text" id="uid" placeholder="아이디" value="abcd">
+                            <input type="password" id="pwd" placeholder="비밀번호" value="1234">
+                            <button type="button" id="loginb">로그인_미디어</button>
+                        </form>
+                    </div>
+                    <div class="box">
+                        <div class="social logo">
+                            <h1>소셜 로그인하기</h1>
+                            <button class="facebook">페이스북 ID로 로그인</button>
+                            <button class="twitter">트윗터 ID로 로그인</button>
+                            <button class="naver">네이버 ID로 로그인</button>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="alert">
+                        <h1>도움이 필요하신가요?</h1>
+                        <p>
+                            <button id="searId">아이디 찾기</button>
+                            <button id="searPw">비밀번호 찾기</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clear"></div>
+    
+    
+    <div id="back"></div>
+    <div id="popup">
+         <div class="title">아이디 찾기<span class="close" onclick="closePopup()">&times;</span></div>
+         <div class="search">
+			<h3>아이디 찾는 방법을 선택해 주세요</h3>
+			<div><input type="radio" value="ck1">회원정보에 등록한 휴대전화로 인증</div>
+			<div class="info">
+				<div><input type="text" placeholder="이름"></div>
+				
+				    <select>
+					 	<option value="+82" selected>+82
+					 	<option value="+100">+100
+					 	<option value="+200">+200
+					 	<option value="+300">+300
+					</select>
+					<input type="text" placeholder="휴대전화번호">
+					<input type="button" value="인증번호받기">
+				
+			</div>
+			<div class="mail"><input type="radio" value="ck2">본인확인 이메일 인증</div>
+		</div>
+    </div>
+    <!-- //section2 -->
+    
+    <!-- footer -->
+    <footer>    
+        <div class="top">
+            <div class="container">
+                <span>다운로드</span>
+                <span>개인정보처리방침</span>
+                <span>저작권지침및신고</span>
+                <span>이메일무단수집거부</span>
+            </div>
+        </div>
+        <div class="container">
+            <strong>
+                Home : Location Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+				(주)K-COM 서울 00구  K-COM 301호
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+        .input-wrapper {
+         position: relative;
+        }
+
+        .input-label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: gray;
+        }
+
+        .has-value {
+            display: none;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="input-wrapper">
+            <input type="text" id="myInput">
+            <label for="myInput" class="input-label" id="labelText">this test</label>
+        </div>
+
+        <script>
+            const input = document.getElementById('myInput');
+            const label = document.getElementById('labelText');
+
+    input.addEventListener('input', function() {
+    label.textContent = input.value.length > 0 ? input.value+'test' : 'test';
+    });
+
+
+        </script>
+        
+    </body>
+</html>

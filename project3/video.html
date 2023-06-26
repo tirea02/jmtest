@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- header ------------------------------------------ -->
+	<header>
+		<div class="container">
+			<div class="logo">
+                <a href="index.html"> <img src="image/home.gif">하이!!!신정민 </a>
+            </div>
+			<ul class="sidemenu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="searchmap.html">Sitemap</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- nav --------------------------------------------- -->
+	<nav>
+		<div class="container">
+			<ul class="leftMenu">
+				<li class="dropBox">
+					메인갤러리 
+					<span class="dropmenu"> 
+						<span><a href="index.html">index</a></span> 
+						<span><a href="gallery.html">갤러리</a></span>
+					</span>
+				</li>
+
+				<li class="dropBox">
+					게시판
+					<span class="dropmenu"> 
+						<span><a href="board.html">자유 게시판</a></span> 
+						<span><a href="#">문의 게시판</a></span> 
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="">멀티미디어</a> 
+					<span class="dropmenu"> 
+						<span><a href="#">음악듣기</a></span> 
+						<span><a href="video.html">동영상보기</a></span> 
+					</span>
+				</li>
+				<li class="dropBox">
+					<a href="">상품정보</a>
+					<span class="dropmenu">
+						<span> <a href="mycoffee.html">mycoffee</a> </span>
+						<span> <a href="#">myproduct</a> </span>
+					</span>
+				</li>
+
+				<li class="dropBox">
+					<a href="">mypage</a>
+					<span class="dropmenu">
+						<span> <a href="searchmap.html">위치지도</a> </span>
+						<span> <a href="#">About</a> </span>
+					</span>
+				</li>
+			</ul>
+			<ul class="rightMenu">
+				<li><a href="join.html">회원가입</a></li>
+				<li><a href="login.html">로그인</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- //nav -->
+	
+	<!-- section9 --------------------------------------------- -->
+	<section id="section9">
+		<div class="container">
+			
+			<video width="700" id="vdo" controls="controls" autoplay  loop>
+			    <source  src="../video/scuba.mp4"  type="video/mp4"></source>
+			  	<source  src="http://html5.firejune.com/demo/big_buck_bunny.ogv"  type="video/ogg"></source>
+			    <source  src="http://html5.firejune.com/demo/big_buck_bunny.mp4"  type="video/mp4"></source>
+			    <source  src="http://html5.firejune.com/demo/big_buck_bunny.webm" type="video/webm"></source>
+				<source  src="./image/scuba.mp4" type="video/webm" loop autoplay muted></source>
+			</video>
+			<br>
+			<button onclick="btnPlay()">시작</button>
+			<button onclick="btnPause()">일시정지</button>
+			<button onclick="btnStop()">정지</button>
+			<button onclick="btnRate1()">1배속</button>
+			<button onclick="btnRate2()">2배속</button><br><br>
+			<button onclick="btnPrev()">&lt;&lt;</button>
+			<button onclick="btnNext()">&gt;&gt;</button>
+			<button onclick="btnSizeNomal()">일반화면</button>
+			<button onclick="btnSizeLarge()">2배화면</button>
+			<button onclick="btnSizeSmall()">1/2화면</button>
+		</div>
+	</section>
+	<div class="clear"></div>
+	<!-- //section9 -->
+
+	<!-- footer --------------------------------------------- -->
+	<footer>
+		<div class="top">
+			<div class="container">
+				<span>다운로드</span> 
+				<span>개인정보처리방침</span> 
+				<span>저작권지침및신고</span> 
+				<span>이메일무단수집거부</span>
+			</div>
+		</div>
+		<div class="container">
+            <strong>
+                Home : Location Log : Tag Log : Media Log : Guestbook : Admin : New Post
+            </strong>
+            <div class="copyright">
+				(주)K-COM 서울 00구  K-COM 301호
+            </div>
+        </div>
+	</footer>
+	<!-- //footer -->
+	
+	<script>
+		var v;
+		function btnPlay(){
+			v=document.getElementById("vdo");
+			v.play();
+		}
+		function btnPause(){
+			v.pause();
+		}
+		function btnStop(){
+			v.pause();
+			v.currentTime=0;
+		}
+		function btnPrev(){
+			v.currentTime -= 5;
+		}
+		function btnNext(){
+			v.currentTime += 5;
+		}
+		function btnRate1(){
+			v.playbackRate=1;
+		}
+		function btnRate2(){
+			v.playbackRate=2;
+		}
+		function btnSizeNomal(){
+			v.width=300;
+		}
+		function btnSizeLarge(){
+			v.width=500;
+		}
+		function btnSizeSmall(){
+			v.width=150;
+		}
+	</script>
+</body>
+</html>
